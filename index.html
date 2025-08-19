@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PPTPP</title>
+  </head>
+  <body>
+    <div class="flex justify-center flex-col items-center m-8 gap-8 ">
+
+      <div class="text-4xl">Piedra, Papel Y Tijeras Para Psicopatas</div>
+
+      <div id="pantalla" class="flex justify-center items-center card bg-base-100 w-fit shadow-xl  text-3xl">
+        <div class="flex gap-12 items-center justify-evenly p-8 w-full">
+          <div id="jugador" class="flex flex-col items-center gap-2">
+            <div class="bg-success text-success-content px-3 py-1 rounded-2xl">Juegador</div>
+            <div class="imagen">...</div>
+            <div class="texto"></div>
+            <div class="putaje">0</div>
+          </div>
+          <div>VS</div>
+          <div id="enemigo" class="flex flex-col items-center gap-2">
+            <div class="bg-error text-error-content px-3 py-1 rounded-2xl">Enemigo</div>
+            <div class="imagen">...</div>
+            <div class="texto"></div>
+            <div class="putaje">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="opciones">
+        <button class="btn btn-soft text-xl" id="piedra" onclick="juegar(2)">🪨 Piedra</button>
+        <button class="btn btn-soft text-xl" id="papel" onclick="juegar(1)">📄 Papel</button>
+        <button class="btn btn-soft text-xl" id="tijeras" onclick="juegar(0)">✂️ Tijeras</button>
+        <button class="btn btn-soft text-xl" id="lagarto" onclick="juegar(3)">🦎 Lagarto</button>
+        <button class="btn btn-soft text-xl" id="spock" onclick="juegar(4)">🖖 Spock</button>
+      </div>
+
+      <button class="btn btn-info" onclick="reiniciar()">Reiniciar</button>
+
+      <div class="flex flex-col items-center">
+        <div class="text-2xl">REGLAS</div>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th></th>
+                <th>Elemento</th>
+                <th>Mata a</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td>✂️ Tijeras</td>
+                <td>📄 Papel & 🦎 Lagarto</td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td>📄 Papel</td>
+                <td>🪨 Piedra & 🖖 Spock</td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td>🪨 Piedra</td>
+                <td>🦎 Lagarto & ✂️ Tijeras</td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td>🦎 Lagarto</td>
+                <td>🖖 Spock & 📄 Papel</td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td>🖖 Spock</td>
+                <td>✂️ Tijeras & 🪨 Piedra</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>  
+
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
